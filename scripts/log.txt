@@ -1,0 +1,779 @@
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_convert_label_tree.py
+Using default base directory:  E:\Trail_Cameras\Utah\2016-2017\
+running cmd:  python hwi_convert_label.py -d Cam272_011017_Rabbit
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam272_011017_Rabbit
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_011017_Rabbit.csv
+['Cam272', '011017', 'Rabbit']
+camera_imagedir:  272
+begindate_imagedir:  2017-01-10 00:00:00
+carcass_imagedir:  Rabbit
+match:
+   Camera Begin Date     Carcass Eagle Photo Numbers
+9   272.0 2017-01-10  Jackrabbit                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam272_102716_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam272_102716_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_102716_Deer.csv
+['Cam272', '102716', 'Deer']
+camera_imagedir:  272
+begindate_imagedir:  2016-10-27 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+14   272.0 2016-10-27  Mule Deer             133-240
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam272_113016_Raccoon
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam272_113016_Raccoon
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_113016_Raccoon.csv
+['Cam272', '113016', 'Raccoon']
+camera_imagedir:  272
+begindate_imagedir:  2016-11-30 00:00:00
+carcass_imagedir:  Raccoon
+match:
+    Camera Begin Date  Carcass Eagle Photo Numbers
+18   272.0 2016-11-30  Raccoon                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam272_122016_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam272_122016_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_122016_Deer.csv
+['Cam272', '122016', 'Deer']
+camera_imagedir:  272
+begindate_imagedir:  2016-12-20 00:00:00
+carcass_imagedir:  Deer
+match:
+Empty DataFrame
+Columns: [Camera, Begin Date, Carcass, Eagle Photo Numbers]
+Index: []
+Traceback (most recent call last):
+  File "hwi_convert_label.py", line 240, in <module>
+    main(sys.argv[1:])
+  File "hwi_convert_label.py", line 131, in main
+    if not df_match['Eagle Photo Numbers'].tolist()[0] == 0 :
+IndexError: list index out of range
+running cmd:  python hwi_convert_label.py -d Cam273_010317_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam273_010317_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_010317_Deer.csv
+['Cam273', '010317', 'Deer']
+camera_imagedir:  273
+begindate_imagedir:  2017-01-03 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+25   273.0 2017-01-03  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam273_101116_Jackrabbit
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam273_101116_Jackrabbit
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_101116_Jackrabbit.csv
+['Cam273', '101116', 'Jackrabbit']
+camera_imagedir:  273
+begindate_imagedir:  2016-10-11 00:00:00
+carcass_imagedir:  Jackrabbit
+match:
+    Camera Begin Date     Carcass Eagle Photo Numbers
+11   273.0 2016-10-11  Jackrabbit                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam273_111116_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam273_111116_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_111116_Deer.csv
+['Cam273', '111116', 'Deer']
+camera_imagedir:  273
+begindate_imagedir:  2016-11-11 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass              Eagle Photo Numbers
+16   273.0 2016-11-11  Mule Deer  1444-1447, 1453-1480, 1504-1506
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam273_120816_Jackrabbit
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam273_120816_Jackrabbit
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_120816_Jackrabbit.csv
+['Cam273', '120816', 'Jackrabbit']
+camera_imagedir:  273
+begindate_imagedir:  2016-12-08 00:00:00
+carcass_imagedir:  Jackrabbit
+match:
+   Camera Begin Date     Carcass Eagle Photo Numbers
+6   273.0 2016-12-08  Jackrabbit             049-051
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam276_010917_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam276_010917_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_010917_Deer.csv
+['Cam276', '010917', 'Deer']
+camera_imagedir:  276
+begindate_imagedir:  2017-01-09 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass  \
+30   276.0 2017-01-09  Mule Deer
+
+                                  Eagle Photo Numbers
+30  931-937, 976-981, 985-991, 997-1015, 1021-1023...
+eagle_start_stop:  [[1306, 1306]]
+running cmd:  python hwi_convert_label.py -d Cam276_011817_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam276_011817_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_011817_Deer.csv
+['Cam276', '011817', 'Deer']
+camera_imagedir:  276
+begindate_imagedir:  2017-01-18 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass  \
+33   276.0 2017-01-18  Mule Deer
+
+                                  Eagle Photo Numbers
+33  934, 937-942, 955-958, 961, 964-967, 973-976, ...
+eagle_start_stop:  [[934, 934], [961, 961], [1216, 1216], [1840, 1840], [1847, 1847], [1924, 1924], [1939, 1939], [2065, 2065], [2086, 2086], [2404, 2404], [7066, 7066], [7278, 7278]]
+running cmd:  python hwi_convert_label.py -d Cam276_101116_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam276_101116_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_101116_Deer.csv
+['Cam276', '101116', 'Deer']
+camera_imagedir:  276
+begindate_imagedir:  2016-10-11 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+10   276.0 2016-10-11  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam276_121216_Raccoon
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam276_121216_Raccoon
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_121216_Raccoon.csv
+['Cam276', '121216', 'Raccoon']
+camera_imagedir:  276
+begindate_imagedir:  2016-12-12 00:00:00
+carcass_imagedir:  Raccoon
+match:
+    Camera Begin Date  Carcass Eagle Photo Numbers
+24   276.0 2016-12-12  Raccoon                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam277_011817_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam277_011817_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_011817_Deer.csv
+['Cam277', '011817', 'Deer']
+camera_imagedir:  277
+begindate_imagedir:  2017-01-18 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+31   277.0 2017-01-18  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam277_101116_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam277_101116_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_101116_Deer.csv
+['Cam277', '101116', 'Deer']
+camera_imagedir:  277
+begindate_imagedir:  2016-10-11 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+12   277.0 2016-10-11  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam277_111116_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam277_111116_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_111116_Deer.csv
+['Cam277', '111116', 'Deer']
+camera_imagedir:  277
+begindate_imagedir:  2016-11-11 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass  \
+15   277.0 2016-11-11  Mule Deer
+
+                                  Eagle Photo Numbers
+15  2815-2819, 2854-2868, 5152-5155, 6037-6048, 67...
+eagle_start_stop:  [[6775, 6775]]
+*************** Traceback (most recent call last):
+  File "hwi_convert_label.py", line 240, in <module>
+    main(sys.argv[1:])
+  File "hwi_convert_label.py", line 166, in main
+    image_num = int(base_name.split('_')[1])
+ValueError: invalid literal for int() with base 10: '0001 (1)'
+running cmd:  python hwi_convert_label.py -d Cam277_120716_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam277_120716_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_120716_Deer.csv
+['Cam277', '120716', 'Deer']
+camera_imagedir:  277
+begindate_imagedir:  2016-12-07 00:00:00
+carcass_imagedir:  Deer
+match:
+   Camera Begin Date    Carcass  \
+4   277.0 2016-12-07  Mule Deer
+
+                                 Eagle Photo Numbers
+4  0028-0033, 0043-0131, 0139-0141, 0343-0363, 03...
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam279_010317_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam279_010317_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_010317_Deer.csv
+['Cam279', '010317', 'Deer']
+camera_imagedir:  279
+begindate_imagedir:  2017-01-03 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+28   279.0 2017-01-03  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam279_011817_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam279_011817_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_011817_Deer.csv
+['Cam279', '011817', 'Deer']
+camera_imagedir:  279
+begindate_imagedir:  2017-01-18 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass  \
+32   279.0 2017-01-18  Mule Deer
+
+                                  Eagle Photo Numbers
+32  155-370, 1773-1802, 2379-2511, 2620, 4847-4848...
+eagle_start_stop:  [[2620, 2620]]
+running cmd:  python hwi_convert_label.py -d Cam279_011817_Deer_cont
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam279_011817_Deer_cont
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_011817_Deer_cont.csv
+['Cam279', '011817', 'Deer', 'cont']
+camera_imagedir:  279
+begindate_imagedir:  2017-01-18 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass  \
+32   279.0 2017-01-18  Mule Deer
+
+                                  Eagle Photo Numbers
+32  155-370, 1773-1802, 2379-2511, 2620, 4847-4848...
+eagle_start_stop:  [[2620, 2620]]
+skipping to first in sequence:  1 2 2
+running cmd:  python hwi_convert_label.py -d Cam279_121216_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam279_121216_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_121216_Deer.csv
+['Cam279', '121216', 'Deer']
+camera_imagedir:  279
+begindate_imagedir:  2016-12-12 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+23   279.0 2016-12-12  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam292_010917_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam292_010917_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam292_010917_Deer.csv
+['Cam292', '010917', 'Deer']
+camera_imagedir:  292
+begindate_imagedir:  2017-01-09 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass  \
+29   292.0 2017-01-09  Mule Deer
+
+                                  Eagle Photo Numbers
+29  75-372, 393-0805, 815-828, 1663-1692, 1861-194...
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam292_121216_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam292_121216_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam292_121216_Deer.csv
+['Cam292', '121216', 'Deer']
+camera_imagedir:  292
+begindate_imagedir:  2016-12-12 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+22   292.0 2016-12-12  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam312_121216_Skunk
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam312_121216_Skunk
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam312_121216_Skunk.csv
+['Cam312', '121216', 'Skunk']
+camera_imagedir:  312
+begindate_imagedir:  2016-12-12 00:00:00
+carcass_imagedir:  Skunk
+match:
+    Camera Begin Date Carcass Eagle Photo Numbers
+20   312.0 2016-12-12   Skunk                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam326_010317_Rabbit
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam326_010317_Rabbit
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam326_010317_Rabbit.csv
+['Cam326', '010317', 'Rabbit']
+camera_imagedir:  326
+begindate_imagedir:  2017-01-03 00:00:00
+carcass_imagedir:  Rabbit
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+27   326.0 2017-01-03  Mule Deer                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam326_121216_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam326_121216_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam326_121216_Deer.csv
+['Cam326', '121216', 'Deer']
+camera_imagedir:  326
+begindate_imagedir:  2016-12-12 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass         Eagle Photo Numbers
+21   326.0 2016-12-12  Mule Deer  177-203, 441-444, 449-454,
+Traceback (most recent call last):
+  File "hwi_convert_label.py", line 240, in <module>
+    main(sys.argv[1:])
+  File "hwi_convert_label.py", line 140, in main
+    eagle_start_stop.append([int(split_pair[0]), int(split_pair[1])])
+ValueError: invalid literal for int() with base 10: ''
+running cmd:  python hwi_convert_label.py -d Cam74_111116_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam74_111116_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam74_111116_Deer.csv
+['Cam74', '111116', 'Deer']
+camera_imagedir:  74
+begindate_imagedir:  2016-11-11 00:00:00
+carcass_imagedir:  Deer
+match:
+    Camera Begin Date    Carcass Eagle Photo Numbers
+17    74.0 2016-11-11  Mule Deer           1531-1925
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam74_120116_Jackrabbit
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam74_120116_Jackrabbit
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam74_120116_Jackrabbit.csv
+['Cam74', '120116', 'Jackrabbit']
+camera_imagedir:  74
+begindate_imagedir:  2016-12-01 00:00:00
+carcass_imagedir:  Jackrabbit
+match:
+    Camera Begin Date     Carcass Eagle Photo Numbers
+19    74.0 2016-12-01  Jackrabbit                 NaN
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam74_122016_Jackrabbit
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam74_122016_Jackrabbit
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam74_122016_Jackrabbit.csv
+['Cam74', '122016', 'Jackrabbit']
+camera_imagedir:  74
+begindate_imagedir:  2016-12-20 00:00:00
+carcass_imagedir:  Jackrabbit
+match:
+   Camera Begin Date     Carcass                Eagle Photo Numbers
+7    74.0 2016-12-20  Jackrabbit  91-234, 247-276, 298-455, 487-490
+eagle_start_stop:  []
+running cmd:  python hwi_convert_label.py -d Cam75_111517_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam75_111517_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam75_111517_Deer.csv
+['Cam75', '111517', 'Deer']
+camera_imagedir:  75
+begindate_imagedir:  2017-11-15 00:00:00
+carcass_imagedir:  Deer
+match:
+Empty DataFrame
+Columns: [Camera, Begin Date, Carcass, Eagle Photo Numbers]
+Index: []
+Traceback (most recent call last):
+  File "hwi_convert_label.py", line 240, in <module>
+    main(sys.argv[1:])
+  File "hwi_convert_label.py", line 131, in main
+    if not df_match['Eagle Photo Numbers'].tolist()[0] == 0 :
+IndexError: list index out of range
+running cmd:  python hwi_convert_label.py -d Cam75_120816_Deer
+basedir:  E:\Trail_Cameras\Utah\2016-2017\
+summary_sheet:  E:\Trail_Cameras\Utah\2016-2017\Utah_EVS_Camera_Database_2016-17.xlsx
+label files written to:  C:\Users\smith\Documents\Becky\HawkWatch\data\
+Image directory is  Cam75_120816_Deer
+CSV is  C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam75_120816_Deer.csv
+['Cam75', '120816', 'Deer']
+camera_imagedir:  75
+begindate_imagedir:  2016-12-08 00:00:00
+carcass_imagedir:  Deer
+match:
+   Camera Begin Date    Carcass Eagle Photo Numbers
+5    75.0 2016-12-08  Mule Deer                 NaN
+eagle_start_stop:  []
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_sequence.py -n 5401 -d E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv    Start image number:  5401
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1011.0324675324673   Y:  779.551948051948
+Output file exists. (a=append, o=overwrite, 9=exit):  a
+Appending to file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv
+DateTime, CameraNumber:   2016:10:16 12:39:25 CAM273
+file, mode, sequence num, sequence length:   IMG_5401.JPG M 1 3
+DateTime, CameraNumber:   2016:10:16 12:39:26 CAM273
+file, mode, sequence num, sequence length:   IMG_5402.JPG M 2 3
+DateTime, CameraNumber:   2016:10:16 12:39:27 CAM273
+file, mode, sequence num, sequence length:   IMG_5403.JPG M 3 3
+DateTime, CameraNumber:   2016:10:16 12:43:34 CAM273
+file, mode, sequence num, sequence length:   IMG_5404.JPG M 1 3
+DateTime, CameraNumber:   2016:10:16 12:43:35 CAM273
+file, mode, sequence num, sequence length:   IMG_5405.JPG M 2 3
+DateTime, CameraNumber:   2016:10:16 12:43:36 CAM273
+file, mode, sequence num, sequence length:   IMG_5406.JPG M 3 3
+DateTime, CameraNumber:   2016:10:16 12:46:07 CAM273
+file, mode, sequence num, sequence length:   IMG_5407.JPG M 1 3
+DateTime, CameraNumber:   2016:10:16 12:46:08 CAM273
+file, mode, sequence num, sequence length:   IMG_5408.JPG M 2 3
+DateTime, CameraNumber:   2016:10:16 12:46:09 CAM273
+file, mode, sequence num, sequence length:   IMG_5409.JPG M 3 3
+forrtl: error (200): program aborting due to control-C event
+Image              PC                Routine            Line        Source
+libifcoremd.dll    00007FFF762A94C4  Unknown               Unknown  Unknown
+KERNELBASE.dll     00007FFFB25956FD  Unknown               Unknown  Unknown
+KERNEL32.DLL       00007FFFB4743034  Unknown               Unknown  Unknown
+ntdll.dll          00007FFFB5D81431  Unknown               Unknown  Unknown
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_sequence.py -n 5401 -d E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv    Start image number:  5401
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1011.0324675324673   Y:  779.551948051948
+Output file exists. (a=append, o=overwrite, 9=exit):  a
+Appending to file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>dir *crawl*.py
+ Volume in drive C is OS
+ Volume Serial Number is 6CF2-C7F5
+
+ Directory of C:\Users\smith\Documents\Becky\HawkWatch\scripts
+
+06/29/2018  11:58 AM             1,352 hwi_crawl_dir.py
+               1 File(s)          1,352 bytes
+               0 Dir(s)  135,728,074,752 bytes free
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>dir *tree*.py
+ Volume in drive C is OS
+ Volume Serial Number is 6CF2-C7F5
+
+ Directory of C:\Users\smith\Documents\Becky\HawkWatch\scripts
+
+07/09/2018  11:13 AM             2,650 hwi_sequence_tree.py
+               1 File(s)          2,650 bytes
+               0 Dir(s)  135,728,074,752 bytes free
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_sequence_tree.py -h
+C:\Users\smith\Documents\Becky\HawkWatch\scripts\hwi_sequence_tree.py -d <base directory>
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_sequence_tree.py
+Using default base directory:  E:\Trail_Cameras\Utah\2016-2017\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_011017_Rabbit\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_102716_Deer\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_113016_Raccoon\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_122016_Deer\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_010317_Deer\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  682.7207792207791   Y:  841.8896103896103
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\hwi_sequence_out.csv
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1218.8246753246754   Y:  891.7597402597399
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\hwi_sequence_out.csv
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  474.9285714285712   Y:  1236.694805194805
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2000
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\hwi_sequence_out.csv
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  853.1103896103897   Y:  1103.707792207792
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+
+
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_sequence_tree.py
+Using default base directory:  E:\Trail_Cameras\Utah\2016-2017\
+Start time:  Tue Jul 10 17:42:59 2018
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_011017_Rabbit\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_102716_Deer\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_113016_Raccoon\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam272_122016_Deer\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_010317_Deer\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam276_101116_Deer\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam276_121216_Raccoon\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam277_011817_Deer\
+Skipping... Sequence file exits in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam277_101116_Deer\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam277_111116_Deer\
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  574.6688311688313   Y:  667.3441558441557
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\hwi_sequence_out.csv
+***Current time:  Tue Jul 10 18:05:12 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  894.6688311688312   Y:  646.5649350649347
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\hwi_sequence_out.csv
+***Current time:  Tue Jul 10 18:23:56 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1027.6558441558439   Y:  1024.7467532467529
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-3000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-3200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-3400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-3600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-3800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-4000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-4200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-4400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-4600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-4800
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 00:30:56 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\hwi_carcass_coordinates.csv   Carcass coordinates: X:  907.1363636363636   Y:  1153.5779220779218
+skipping to first in sequence:  1 2 2
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-2800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-3000
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 04:10:14 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  898.8246753246752   Y:  596.694805194805
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 04:35:00 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  932.0714285714287   Y:  883.4480519480518
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-400
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1000
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-1200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 06:12:38 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1048.435064935065   Y:  567.603896103896
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 06:14:40 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\hwi_carcass_coordinates.csv   Carcass coordinates: X:  807.3961038961038   Y:  750.4610389610389
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 06:37:23 2018
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam326_010317_Rabbit\
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1123.2402597402595   Y:  1028.9025974025972
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 07:24:48 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  828.1753246753245   Y:  758.772727272727
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-600
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-800
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 08:32:55 2018
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam74_120116_Jackrabbit\
+Skipping... No carcass coordinate file in directory:  E:\Trail_Cameras\Utah\2016-2017\Cam74_122016_Jackrabbit\
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam75_111517_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam75_111517_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam75_111517_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam75_111517_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam75_111517_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1015.1883116883116   Y:  1353.0584415584415
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam75_111517_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 09:23:30 2018
+running cmd:  python hwi_sequence.py -d E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\
+Using default output file:  hwi_sequence_out.csv
+Using output file:  E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\hwi_sequence_out.csv
+Show each image:  False Image directory:  E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\
+CSV output file:  E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\hwi_sequence_out.csv    Start image number:  1
+File:  E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\hwi_carcass_coordinates.csv   Carcass coordinates: X:  1114.9285714285716   Y:  1398.772727272727
+Writing checkpoint file:  .\checkpoint\bird_sequence.chkpt-200
+writing to output file:  E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\hwi_sequence_out.csv
+***Current time:  Wed Jul 11 09:46:55 2018
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>e:
+
+

@@ -1,0 +1,796 @@
+14 July 2018
+Yesterday, I ran the confusion matrix against the entire labeled dataset including the training data.
+Try again using the labeled test data set aside by the split.
+Accuracy ~94% and 324 false negatives out of ~7000 
+
+----> I need to pivot the sequences into one feature row rather than doing the prediction separately.
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_ML_train.py
+
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Carcass Size  Obscuring Plants  NumObj     Size    Dist  \
+0           1.0           3.0               3.0     0.0      NaN     NaN
+1           1.0           3.0               3.0     4.0  21672.0   482.0
+2           1.0           3.0               3.0     0.0      NaN     NaN
+3           1.0           3.0               3.0     1.0  17139.0  1218.0
+4           1.0           3.0               3.0     6.0  66059.0   333.0
+
+   Angle  Label
+0    NaN      0
+1    9.0      0
+2    NaN      0
+3  -62.0      0
+4    4.0      0
+Int64Index([14220, 11165, 11955, 6973, 33652], dtype='int64')
+Int64Index([14220, 11165, 11955, 6973, 33652], dtype='int64')
+Scaling the features
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [350]}
+Beginning GridSearchCV
+Fitting 10 folds for each of 1 candidates, totalling 10 fits
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed:  3.0min finished
+scores:  [0.9397517]
+scores_std:  [0.00280008]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=350, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([14.58120897]), 'std_fit_time': array([2.53116949]), 'mean_score_time': array([0.37226763]), 'std_score_time': array([0.09413767]), 'param_n_estimators': masked_array(data=[350],
+             mask=[False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 350}], 'split0_test_score': array([0.93940131]), 'split1_test_score': array([0.9364809]), 'split2_test_score': array([0.9459591]), 'split3_test_score': array([0.94084713]), 'split4_test_score': array([0.94011685]), 'split5_test_score': array([0.94255112]), 'split6_test_score': array([0.94011685]), 'split7_test_score': array([0.93743914]), 'split8_test_score': array([0.93620648]), 'split9_test_score': array([0.93839786]), 'mean_test_score': array([0.9397517]), 'std_test_score': array([0.00280008]), 'rank_test_score': array([1]), 'split0_train_score': array([0.99210192]), 'split1_train_score': array([0.99175029]), 'split2_train_score': array([0.99156118]), 'split3_train_score': array([0.99164232]), 'split4_train_score': array([0.99153413]), 'split5_train_score': array([0.9919128]), 'split6_train_score': array([0.99158823]), 'split7_train_score': array([0.9918587]), 'split8_train_score': array([0.99180483]), 'split9_train_score': array([0.99172369]), 'mean_train_score': array([0.99174781]), 'std_train_score': array([0.00016907])}
+feature importances:  [0.09218133 0.00630375 0.05582331 0.08282982 0.28728829 0.2813681
+ 0.1942054 ]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+Average precision-recall score: 0.55
+Accuracy Score
+0.9431724137931035
+
+Confusion Matrix
+[[6365   88]
+ [ 324  473]]
+
+Classification Report
+             precision    recall  f1-score   support
+
+          0       0.95      0.99      0.97      6453
+          1       0.84      0.59      0.70       797
+
+avg / total       0.94      0.94      0.94      7250
+
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+
+13 July 2018
+Tune ML model
+
+Confusion Matrix
+Carcass Dist        41973
+Carcass Size        41973
+Obscuring Plants    41973
+NumObj              41973
+Size                32406
+Dist                32406
+Angle               32406
+Label               48330
+
+Is count(Label) - count(NumObj) due to the number of night images? 48330-41973=6357
+Yes! The input file has 6357 night images.
+
+**** Revert to Standard Scalar and put carcass size back in because the ROC curve is better.
+Accuracy Score
+0.9818746120422098
+
+Confusion Matrix
+[[43000    85]
+ [  791  4454]]
+
+Classification Report
+             precision    recall  f1-score   support
+
+          0       0.98      1.00      0.99     43085
+          1       0.98      0.85      0.91      5245
+
+avg / total       0.98      0.98      0.98     48330
+
+Run again increasing the test data size to 15% and increase nfolds=10
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Carcass Size  Obscuring Plants  NumObj     Size    Dist  \
+0           1.0           3.0               3.0     0.0      NaN     NaN
+1           1.0           3.0               3.0     4.0  21672.0   482.0
+2           1.0           3.0               3.0     0.0      NaN     NaN
+3           1.0           3.0               3.0     1.0  17139.0  1218.0
+4           1.0           3.0               3.0     6.0  66059.0   333.0
+
+   Angle  Label
+0    NaN      0
+1    9.0      0
+2    NaN      0
+3  -62.0      0
+4    4.0      0
+Int64Index([47643, 20723, 18491, 44, 20891], dtype='int64')
+Int64Index([47643, 20723, 18491, 44, 20891], dtype='int64')
+Scaling the features
+(41080, 7)
+[[-1.95099596 -2.50677164 -1.76557949 -0.89680887 -0.49102645 -0.97607699
+   0.0571233 ]
+ [ 0.41088578  0.40858523  0.15269624  0.65748496 -0.38696832 -0.04509708
+  -0.6395602 ]
+ [ 0.41088578  0.40858523  0.15269624  2.21177878 -0.38738258 -0.17907574
+  -0.13794808]
+ [-0.77005509  0.40858523  1.11183411  1.1755829  -0.20137184  1.27407739
+   1.61769433]
+ [ 0.41088578  0.40858523  0.15269624 -0.37871093  0.21477254  2.55202767
+  -0.11008074]]
+(7250, 7)
+[[-0.77005509  0.40858523 -0.80644162  1.1755829   0.68105097  0.20568348
+   0.50300073]
+ [-0.77005509  0.40858523 -0.80644162  0.13938701  0.23279717  0.03391597
+  -0.19368276]
+ [ 0.41088578  0.40858523  1.11183411  0.13938701 -0.14362249 -0.12067479
+  -2.08866187]
+ [ 0.41088578  0.40858523  1.11183411 -0.89680887 -0.49102645 -0.97607699
+   0.0571233 ]
+ [ 0.41088578  0.40858523  1.11183411  0.13938701 -0.14874343 -0.04853243
+   1.84063305]]
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [350]}
+Beginning GridSearchCV
+Fitting 10 folds for each of 1 candidates, totalling 10 fits
+[Parallel(n_jobs=1)]: Done  10 out of  10 | elapsed:  1.8min finished
+scores:  [0.94016553]
+scores_std:  [0.00261318]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=350, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([8.49399326]), 'std_fit_time': array([0.09645732]), 'mean_score_time': array([0.23410292]), 'std_score_time': array([0.01713609]), 'param_n_estimators': masked_array(data=[350],
+             mask=[False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 350}], 'split0_test_score': array([0.93842784]), 'split1_test_score': array([0.94207836]), 'split2_test_score': array([0.94110489]), 'split3_test_score': array([0.94061816]), 'split4_test_score': array([0.93695229]), 'split5_test_score': array([0.94157741]), 'split6_test_score': array([0.9376674]), 'split7_test_score': array([0.93596299]), 'split8_test_score': array([0.94399805]), 'split9_test_score': array([0.94326759]), 'mean_test_score': array([0.94016553]), 'std_test_score': array([0.00261318]), 'rank_test_score': array([1]), 'split0_train_score': array([0.99161505]), 'split1_train_score': array([0.99172324]), 'split2_train_score': array([0.99150686]), 'split3_train_score': array([0.99169619]), 'split4_train_score': array([0.99169642]), 'split5_train_score': array([0.99145299]), 'split6_train_score': array([0.99158846]), 'split7_train_score': array([0.99183188]), 'split8_train_score': array([0.99134504]), 'split9_train_score': array([0.99156141]), 'mean_train_score': array([0.99160175]), 'std_train_score': array([0.00013587])}
+feature importances:  [0.0920371  0.00723576 0.05909714 0.08004154 0.28618227 0.27860381
+ 0.19680238]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+
+
+
+Run auto_classify against the merged dataset
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_auto_classify.py -i ..\data\tmp_labeled_data.csv -d ..\data
+
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default model:  ..\data\hwi_classifier_model.pkl
+Using default output file:  ..\data\hwi_auto_classify_out.csv
+Image directory: ..\data\   trained model file:  ..\data\hwi_classifier_model.pkl
+Input Sequence data file:  ..\data\tmp_labeled_data.csv Classificiation output file:  ..\data\hwi_auto_classify_out.csv
+Load pickled model from file:  ..\data\hwi_classifier_model.pkl
+Input sequence data...
+   Carcass Dist  Obscuring Plants  NumObj     Size    Dist  Angle
+0           1.0               3.0     0.0      NaN     NaN    NaN
+1           1.0               3.0     4.0  21672.0   482.0    9.0
+2           1.0               3.0     0.0      NaN     NaN    NaN
+3           1.0               3.0     1.0  17139.0  1218.0  -62.0
+4           1.0               3.0     6.0  66059.0   333.0    4.0
+Scaling the features. This needs to be the same as scaling done to train the model.
+(48330, 6)
+[[-1.          0.5        -0.33333333 -0.29985914 -0.55505618  0.        ]
+ [-1.          0.5         1.          0.10581832  0.52808989  0.32142857]
+ [-1.          0.5        -0.33333333 -0.29985914 -0.55505618  0.        ]
+ [-1.          0.5         0.          0.02096524  2.18202247 -2.21428571]
+ [-1.          0.5         1.66666667  0.93669713  0.19325843  0.14285714]]
+Writing classificiation output file:  ..\data\hwi_auto_classify_out.csv
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+
+feature importances:  [0.09279989 0.00673682 0.05934484 0.07912407 0.28755368 0.27974758 0.19469313]
+Carcass Dist  0.09279989
+*Carcass Size  0.00673682
+Obscuring Plants  0.05934484
+NumObj     0.07912407
+Size    0.28755368
+Dist    0.27974758
+Angle  0.19469313
+
+Change to robust scalar which was slightly better than standard.
+
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Obscuring Plants  NumObj     Size    Dist  Angle  Label
+0           1.0               3.0     0.0      NaN     NaN    NaN      0
+1           1.0               3.0     4.0  21672.0   482.0    9.0      0
+2           1.0               3.0     0.0      NaN     NaN    NaN      0
+3           1.0               3.0     1.0  17139.0  1218.0  -62.0      0
+4           1.0               3.0     6.0  66059.0   333.0    4.0      0
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Scaling the features
+(45913, 6)
+[[ 1.59288687 -0.80624088  0.14343808 -0.40163124 -0.26421755  1.59465096]
+ [ 0.41168337  1.11188423 -0.37803413 -0.09944545  0.21435615  1.53879577]
+ [ 1.59288687 -0.80624088  1.18638249  0.64713225  0.48635127 -2.28728491]
+ [ 0.41168337  1.11188423 -0.89950633 -0.48984894 -0.97691363  0.05863317]
+ [ 0.41168337  0.15282168  0.66491029  0.94098037  1.89797152 -0.19271519]]
+(2417, 6)
+[[-1.95072363 -1.76530343 -0.89950633 -0.48984894 -0.97691363  0.05863317]
+ [-0.76952013  0.15282168  3.79374352  0.36727104 -0.198801   -2.3431401 ]
+ [ 0.41168337  0.15282168  0.14343808 -0.39041184  1.32988045 -0.41613596]
+ [-1.95072363 -1.76530343 -0.89950633 -0.48984894 -0.97691363  0.05863317]
+ [ 0.41168337  1.11188423 -0.89950633 -0.48984894 -0.97691363  0.05863317]]
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [350]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 1 candidates, totalling 3 fits
+[Parallel(n_jobs=1)]: Done   3 out of   3 | elapsed:   28.3s finished
+scores:  [0.9367935]
+scores_std:  [0.00056046]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=350, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([7.29518445]), 'std_fit_time': array([0.0127531]), 'mean_score_time': array([0.7289954]), 'std_score_time': array([0.00738841]), 'param_n_estimators': masked_array(data=[350],
+             mask=[False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 350}], 'split0_test_score': array([0.93681803]), 'split1_test_score': array([0.93609514]), 'split2_test_score': array([0.93746733]), 'mean_test_score': array([0.9367935]), 'std_test_score': array([0.00056046]), 'rank_test_score': array([1]), 'split0_train_score': array([0.99186487]), 'split1_train_score': array([0.99140776]), 'split2_train_score': array([0.99196315]), 'mean_train_score': array([0.99174526]), 'std_train_score': array([0.000242])}
+feature importances:  [0.09338309 0.06209941 0.08198257 0.28651444 0.28118223 0.19483825]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+Use standard scalar and start with Random Forest Classifier since it worked best last time
+
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Carcass Size  Obscuring Plants  NumObj     Size    Dist  \
+0           1.0           3.0               3.0     0.0      NaN     NaN
+1           1.0           3.0               3.0     4.0  21672.0   482.0
+2           1.0           3.0               3.0     0.0      NaN     NaN
+3           1.0           3.0               3.0     1.0  17139.0  1218.0
+4           1.0           3.0               3.0     6.0  66059.0   333.0
+
+   Angle  Label
+0    NaN      0
+1    9.0      0
+2    NaN      0
+3  -62.0      0
+4    4.0      0
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Scaling the features
+(45913, 7)
+[[ 1.59288687  0.40869686 -0.80624088  0.14343808 -0.40163124 -0.26421755
+   1.59465096]
+ [ 0.41168337  0.40869686  1.11188423 -0.37803413 -0.09944545  0.21435615
+   1.53879577]
+ [ 1.59288687  0.40869686 -0.80624088  1.18638249  0.64713225  0.48635127
+  -2.28728491]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  0.15282168  0.66491029  0.94098037  1.89797152
+  -0.19271519]]
+(2417, 7)
+[[-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [-0.76952013  0.40869686  0.15282168  3.79374352  0.36727104 -0.198801
+  -2.3431401 ]
+ [ 0.41168337  0.40869686  0.15282168  0.14343808 -0.39041184  1.32988045
+  -0.41613596]
+ [-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]]
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [250, 300, 350]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:  1.2min finished
+scores:  [0.93661926 0.93694596 0.93696774]
+scores_std:  [0.0004241  0.00033452 0.00052749]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=350, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([4.86865942, 5.8319962 , 6.91579088]), 'std_fit_time': array([0.01948922, 0.03211388, 0.16048883]), 'mean_score_time': array([0.53112411, 0.65085538, 0.78628381]), 'std_score_time': array([0.01276849, 0.01473027, 0.051542  ]), 'param_n_estimators': masked_array(data=[250, 300, 350],
+             mask=[False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 250}, {'n_estimators': 300}, {'n_estimators': 350}], 'split0_test_score': array([0.93681803, 0.9372754 , 0.93740608]), 'split1_test_score': array([0.9360298 , 0.93648719, 0.93622582]), 'split2_test_score': array([0.93700993, 0.93707527, 0.9372713 ]), 'mean_test_score': array([0.93661926, 0.93694596, 0.93696774]), 'std_test_score': array([0.0004241 , 0.00033452, 0.00052749]), 'rank_test_score': array([3, 2, 1]), 'split0_train_score': array([0.99186487, 0.99186487, 0.99186487]), 'split1_train_score': array([0.99140776, 0.99140776, 0.99140776]), 'split2_train_score': array([0.99196315, 0.99196315, 0.99196315]), 'mean_train_score': array([0.99174526, 0.99174526, 0.99174526]), 'std_train_score': array([0.000242, 0.000242, 0.000242])}
+feature importances:  [0.09279989 0.00673682 0.05934484 0.07912407 0.28755368 0.27974758
+ 0.19469313]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+
+#tuned_parameters = {'n_estimators': [200, 300, 400]}   # this work best previously
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Carcass Size  Obscuring Plants  NumObj     Size    Dist  \
+0           1.0           3.0               3.0     0.0      NaN     NaN
+1           1.0           3.0               3.0     4.0  21672.0   482.0
+2           1.0           3.0               3.0     0.0      NaN     NaN
+3           1.0           3.0               3.0     1.0  17139.0  1218.0
+4           1.0           3.0               3.0     6.0  66059.0   333.0
+
+   Angle  Label
+0    NaN      0
+1    9.0      0
+2    NaN      0
+3  -62.0      0
+4    4.0      0
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Scaling the features
+(45913, 7)
+[[ 1.59288687  0.40869686 -0.80624088  0.14343808 -0.40163124 -0.26421755
+   1.59465096]
+ [ 0.41168337  0.40869686  1.11188423 -0.37803413 -0.09944545  0.21435615
+   1.53879577]
+ [ 1.59288687  0.40869686 -0.80624088  1.18638249  0.64713225  0.48635127
+  -2.28728491]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  0.15282168  0.66491029  0.94098037  1.89797152
+  -0.19271519]]
+(2417, 7)
+[[-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [-0.76952013  0.40869686  0.15282168  3.79374352  0.36727104 -0.198801
+  -2.3431401 ]
+ [ 0.41168337  0.40869686  0.15282168  0.14343808 -0.39041184  1.32988045
+  -0.41613596]
+ [-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]]
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [200, 300, 400]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:  1.2min finished
+scores:  [0.93683706 0.93694596 0.93692418]
+scores_std:  [0.00064493 0.00033452 0.00068085]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=300, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([3.93766077, 5.85801641, 7.83150578]), 'std_fit_time': array([0.02683286, 0.02552   , 0.03898947]), 'mean_score_time': array([0.41521295, 0.63526948, 0.84355235]), 'std_score_time': array([6.63512249e-03, 7.34103779e-03, 2.95972124e-05]), 'param_n_estimators': masked_array(data=[200, 300, 400],
+             mask=[False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 200}, {'n_estimators': 300}, {'n_estimators': 400}], 'split0_test_score': array([0.93766743, 0.9372754 , 0.93747141]), 'split1_test_score': array([0.93609514, 0.93648719, 0.93596445]), 'split2_test_score': array([0.93674856, 0.93707527, 0.93733664]), 'mean_test_score': array([0.93683706, 0.93694596, 0.93692418]), 'std_test_score': array([0.00064493, 0.00033452, 0.00068085]), 'rank_test_score': array([3, 1, 2]), 'split0_train_score': array([0.99186487, 0.99186487, 0.99186487]), 'split1_train_score': array([0.99140776, 0.99140776, 0.99140776]), 'split2_train_score': array([0.99196315, 0.99196315, 0.99196315]), 'mean_train_score': array([0.99174526, 0.99174526, 0.99174526]), 'std_train_score': array([0.000242, 0.000242, 0.000242])}
+feature importances:  [0.09310388 0.00685139 0.058713   0.07886976 0.28753529 0.28016826
+ 0.19475842]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+tuned_parameters = {'n_estimators': [100, 300, 500], 'max_features': ['sqrt'], 'max_depth': [None, 1, 2], 'min_samples_split': [2, 3]}
+
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Carcass Size  Obscuring Plants  NumObj     Size    Dist  \
+0           1.0           3.0               3.0     0.0      NaN     NaN
+1           1.0           3.0               3.0     4.0  21672.0   482.0
+2           1.0           3.0               3.0     0.0      NaN     NaN
+3           1.0           3.0               3.0     1.0  17139.0  1218.0
+4           1.0           3.0               3.0     6.0  66059.0   333.0
+
+   Angle  Label
+0    NaN      0
+1    9.0      0
+2    NaN      0
+3  -62.0      0
+4    4.0      0
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Scaling the features
+(45913, 7)
+[[ 1.59288687  0.40869686 -0.80624088  0.14343808 -0.40163124 -0.26421755
+   1.59465096]
+ [ 0.41168337  0.40869686  1.11188423 -0.37803413 -0.09944545  0.21435615
+   1.53879577]
+ [ 1.59288687  0.40869686 -0.80624088  1.18638249  0.64713225  0.48635127
+  -2.28728491]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  0.15282168  0.66491029  0.94098037  1.89797152
+  -0.19271519]]
+(2417, 7)
+[[-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [-0.76952013  0.40869686  0.15282168  3.79374352  0.36727104 -0.198801
+  -2.3431401 ]
+ [ 0.41168337  0.40869686  0.15282168  0.14343808 -0.39041184  1.32988045
+  -0.41613596]
+ [-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]]
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [100, 300, 500], 'max_features': ['sqrt'], 'max_depth': [None, 1, 2], 'min_samples_split': [2, 3]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 18 candidates, totalling 54 fits
+[Parallel(n_jobs=1)]: Done  54 out of  54 | elapsed:  3.7min finished
+scores:  [0.93648858 0.93694596 0.93720733 0.93629255 0.93664104 0.93677172
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499 ]
+scores_std:  [2.96749107e-04 3.34524591e-04 6.50144910e-04 2.33338625e-04
+ 4.03227969e-04 3.74891990e-04 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='sqrt', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=500, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([1.97349501, 6.16862774, 9.9299496 , 2.00339953, 5.95017536,
+       9.8469696 , 0.44260685, 1.3087976 , 2.17831326, 0.44260637,
+       1.31218266, 2.17659124, 0.60919817, 1.71834914, 2.96805779,
+       0.59751868, 1.81689088, 2.93747401]), 'std_fit_time': array([1.94873104e-02, 3.57957818e-01, 1.33400269e-01, 3.91041420e-02,
+       7.00839001e-02, 1.23568418e-01, 7.36248891e-03, 2.68714860e-02,
+       1.91880595e-02, 7.34087085e-03, 1.73778634e-05, 2.65832984e-02,
+       2.20919731e-02, 4.49566384e-07, 5.84478915e-02, 1.77557066e-02,
+       4.27910038e-02, 7.85582333e-02]), 'mean_score_time': array([0.21348031, 0.6404868 , 1.0794754 , 0.21349128, 0.63006147,
+       1.0637838 , 0.06769172, 0.21350241, 0.35926644, 0.06769077,
+       0.20308908, 0.35928694, 0.09032083, 0.25514706, 0.39572867,
+       0.08692177, 0.23951674, 0.41137052]), 'std_score_time': array([7.38098089e-03, 1.27538737e-02, 3.52676257e-02, 1.47291075e-02,
+       7.38880712e-03, 2.16878464e-03, 7.36344793e-03, 7.34805018e-03,
+       1.27555321e-02, 7.36445939e-03, 3.46166116e-05, 2.86164100e-05,
+       4.84370791e-03, 7.36451567e-03, 7.34917407e-03, 6.52593553e-03,
+       7.36912539e-03, 7.35497504e-03]), 'param_max_depth': masked_array(data=[None, None, None, None, None, None, 1, 1, 1, 1, 1, 1,
+                   2, 2, 2, 2, 2, 2],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'param_max_features': masked_array(data=['sqrt', 'sqrt', 'sqrt', 'sqrt', 'sqrt', 'sqrt', 'sqrt',
+                   'sqrt', 'sqrt', 'sqrt', 'sqrt', 'sqrt', 'sqrt', 'sqrt',
+                   'sqrt', 'sqrt', 'sqrt', 'sqrt'],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'param_min_samples_split': masked_array(data=[2, 2, 2, 3, 3, 3, 2, 2, 2, 3, 3, 3, 2, 2, 2, 3, 3, 3],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'param_n_estimators': masked_array(data=[100, 300, 500, 100, 300, 500, 100, 300, 500, 100, 300,
+                   500, 100, 300, 500, 100, 300, 500],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}, {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 300}, {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 500}, {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 100}, {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 300}, {'max_depth': None, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 500}, {'max_depth': 1, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}, {'max_depth': 1, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 300}, {'max_depth': 1, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 500}, {'max_depth': 1, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 100}, {'max_depth': 1, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 300}, {'max_depth': 1, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 500}, {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 100}, {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 300}, {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 2, 'n_estimators': 500}, {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 100}, {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 300}, {'max_depth': 2, 'max_features': 'sqrt', 'min_samples_split': 3, 'n_estimators': 500}], 'split0_test_score': array([0.936426  , 0.9372754 , 0.93773277, 0.936426  , 0.936426  ,
+       0.93681803, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466]), 'split1_test_score': array([0.93616048, 0.93648719, 0.93629117, 0.93596445, 0.93629117,
+       0.93629117, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752]), 'split2_test_score': array([0.93687925, 0.93707527, 0.93759801, 0.93648719, 0.93720596,
+       0.93720596, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752]), 'mean_test_score': array([0.93648858, 0.93694596, 0.93720733, 0.93629255, 0.93664104,
+       0.93677172, 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 ]), 'std_test_score': array([2.96749107e-04, 3.34524591e-04, 6.50144910e-04, 2.33338625e-04,
+       4.03227969e-04, 3.74891990e-04, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06]), 'rank_test_score': array([5, 2, 1, 6, 4, 3, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7]), 'split0_train_score': array([0.9918322 , 0.99186487, 0.99186487, 0.99108076, 0.99176686,
+       0.99173419, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752]), 'split1_train_score': array([0.99140776, 0.99140776, 0.99140776, 0.99039498, 0.99111372,
+       0.99130975, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109]), 'split2_train_score': array([0.99196315, 0.99196315, 0.99196315, 0.99114639, 0.99176713,
+       0.99183247, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109]), 'mean_train_score': array([0.99173437, 0.99174526, 0.99174526, 0.99087405, 0.99154924,
+       0.99162547, 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 ]), 'std_train_score': array([2.37056284e-04, 2.41999490e-04, 2.41999490e-04, 3.39807955e-04,
+       3.07953558e-04, 2.26825464e-04, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06])}
+feature importances:  [0.09258557 0.00731774 0.0592445  0.07814287 0.28715827 0.28134195
+ 0.19420909]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+tuned_parameters = {'n_estimators': [200, 600, 1000], 'max_depth': [None, 1, 2, 3], 'min_samples_split': [2, 3, 4, 5]}
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>hwi_ML_train.py
+
+***************
+current working directory:  C:\Users\smith\Documents\Becky\HawkWatch\scripts
+Using default training data file:  ..\data\tmp_labeled_data.csv
+Using default model output file:  ..\data\hwi_classifier_model.pkl
+Labled training data file: ..\data\tmp_labeled_data.csv   trained model file:  ..\data\hwi_classifier_model.pkl
+Labeled training data...
+   Carcass Dist  Carcass Size  Obscuring Plants  NumObj     Size    Dist  \
+0           1.0           3.0               3.0     0.0      NaN     NaN
+1           1.0           3.0               3.0     4.0  21672.0   482.0
+2           1.0           3.0               3.0     0.0      NaN     NaN
+3           1.0           3.0               3.0     1.0  17139.0  1218.0
+4           1.0           3.0               3.0     6.0  66059.0   333.0
+
+   Angle  Label
+0    NaN      0
+1    9.0      0
+2    NaN      0
+3  -62.0      0
+4    4.0      0
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Int64Index([1412, 30361, 7115, 33851, 16047], dtype='int64')
+Scaling the features
+(45913, 7)
+[[ 1.59288687  0.40869686 -0.80624088  0.14343808 -0.40163124 -0.26421755
+   1.59465096]
+ [ 0.41168337  0.40869686  1.11188423 -0.37803413 -0.09944545  0.21435615
+   1.53879577]
+ [ 1.59288687  0.40869686 -0.80624088  1.18638249  0.64713225  0.48635127
+  -2.28728491]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  0.15282168  0.66491029  0.94098037  1.89797152
+  -0.19271519]]
+(2417, 7)
+[[-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [-0.76952013  0.40869686  0.15282168  3.79374352  0.36727104 -0.198801
+  -2.3431401 ]
+ [ 0.41168337  0.40869686  0.15282168  0.14343808 -0.39041184  1.32988045
+  -0.41613596]
+ [-1.95072363 -2.50700712 -1.76530343 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]
+ [ 0.41168337  0.40869686  1.11188423 -0.89950633 -0.48984894 -0.97691363
+   0.05863317]]
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [200, 600, 1000], 'max_depth': [None, 1, 2, 3], 'min_samples_split': [2, 3, 4, 5]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 48 candidates, totalling 144 fits
+[Parallel(n_jobs=1)]: Done 144 out of 144 | elapsed: 18.9min finished
+scores:  [0.93683706 0.93712021 0.93672816 0.93651036 0.93694596 0.93696774
+ 0.93476793 0.93511642 0.935356   0.93263346 0.93232853 0.9323721
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499
+ 0.8907499  0.8907499  0.8907499  0.8907499  0.8907499  0.8907499 ]
+scores_std:  [6.44931456e-04 8.65180617e-04 7.78149781e-04 6.18599519e-04
+ 6.06695006e-04 2.94654061e-04 4.77276562e-04 6.54887933e-04
+ 3.63749886e-04 3.82720513e-04 2.92085515e-04 2.64950024e-04
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06
+ 3.36508822e-06 3.36508822e-06 3.36508822e-06 3.36508822e-06]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=600, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([ 4.13445155, 11.96076322, 19.4713122 ,  3.81244286, 11.54770017,
+       20.60932612,  4.06300147, 11.80923772, 19.60481461,  3.85843905,
+       13.08020751, 20.4284145 ,  0.95819942,  2.71812844,  4.44796316,
+        0.88000544,  2.74976953,  4.62055842,  0.88000965,  2.62439044,
+        4.40902305,  0.9990871 ,  2.62437431,  4.37917527,  1.19763954,
+        3.53559923,  6.11925419,  1.2965943 ,  3.68140912,  5.92049384,
+        1.22885585,  3.53043   ,  6.08709693,  1.79210997,  3.697052  ,
+        5.98297   ,  1.47362534,  4.72123313,  8.29777861,  1.67150672,
+        4.51976466,  7.5451049 ,  1.49443094,  4.66969395,  7.52431067,
+        1.52047936,  4.31606428,  7.24830087]), 'std_fit_time': array([0.23600674, 0.20259838, 0.06094289, 0.03927281, 0.09900946,
+       1.928873  , 0.21989886, 0.24879588, 0.07652894, 0.08926439,
+       0.73384872, 0.49274244, 0.08502428, 0.04416568, 0.10362223,
+       0.01948073, 0.18935378, 0.16291796, 0.00736103, 0.02550958,
+       0.0940035 , 0.08846705, 0.04417541, 0.0702392 , 0.05152217,
+       0.11432045, 0.359484  , 0.0337401 , 0.11850228, 0.09629565,
+       0.01946877, 0.02551124, 0.05308681, 0.65935612, 0.08298855,
+       0.08364443, 0.00735773, 0.23940677, 0.45805752, 0.26539473,
+       0.29704074, 0.25796573, 0.03683034, 0.08930941, 0.28126567,
+       0.03209761, 0.08472357, 0.12300938]), 'mean_score_time': array([0.44260542, 1.27228109, 2.10888871, 0.4259429 , 1.25489895,
+       2.46818535, 0.43836832, 1.31519548, 2.23905881, 0.43117483,
+       1.34863106, 2.32758284, 0.14576109, 0.43216602, 0.69251506,
+       0.14580464, 0.43739748, 0.77287459, 0.14058352, 0.41659164,
+       0.70298274, 0.1718363 , 0.42698407, 0.70295779, 0.17184377,
+       0.48427081, 0.82792918, 0.1614205 , 0.4999028 , 0.86438052,
+       0.17184544, 0.47907257, 0.84357468, 0.26073488, 0.51030668,
+       0.82272243, 0.19266264, 0.55196206, 1.11644451, 0.18745812,
+       0.63008126, 0.95290724, 0.24702462, 0.65088813, 0.90603646,
+       0.18747759, 0.54674713, 0.96334831]), 'std_score_time': array([5.15485180e-02, 6.46868910e-03, 1.27341079e-02, 1.40266278e-02,
+       7.37121542e-03, 4.97100488e-01, 3.50728172e-02, 2.63281810e-02,
+       1.94722704e-02, 1.32418093e-02, 5.15545889e-02, 1.04394145e-01,
+       7.36417863e-03, 7.34613952e-03, 7.35639830e-03, 7.37789180e-03,
+       1.27405578e-02, 7.67576728e-02, 7.08334603e-06, 7.37873343e-03,
+       2.21029361e-02, 1.27289482e-02, 1.94720973e-02, 1.27434789e-02,
+       1.27707067e-02, 1.27562129e-02, 3.37470887e-02, 7.36462797e-03,
+       1.27550397e-02, 1.94822341e-02, 1.74431612e-05, 1.47102618e-02,
+       3.37396975e-02, 1.14832330e-01, 7.37340723e-03, 1.47293416e-02,
+       7.36311063e-03, 7.38317281e-03, 1.59413853e-01, 1.27527951e-02,
+       1.18517498e-01, 4.41920384e-02, 3.26327103e-02, 7.02449772e-02,
+       1.27537684e-02, 1.27555313e-02, 2.60973673e-05, 6.02796953e-02]), 'param_max_depth': masked_array(data=[None, None, None, None, None, None, None, None, None,
+                   None, None, None, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+                   2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3,
+                   3, 3, 3, 3, 3, 3],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'param_min_samples_split': masked_array(data=[2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 2, 2, 2, 3, 3, 3,
+                   4, 4, 4, 5, 5, 5, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5,
+                   2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'param_n_estimators': masked_array(data=[200, 600, 1000, 200, 600, 1000, 200, 600, 1000, 200,
+                   600, 1000, 200, 600, 1000, 200, 600, 1000, 200, 600,
+                   1000, 200, 600, 1000, 200, 600, 1000, 200, 600, 1000,
+                   200, 600, 1000, 200, 600, 1000, 200, 600, 1000, 200,
+                   600, 1000, 200, 600, 1000, 200, 600, 1000],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'max_depth': None, 'min_samples_split': 2, 'n_estimators': 200}, {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 600}, {'max_depth': None, 'min_samples_split': 2, 'n_estimators': 1000}, {'max_depth': None, 'min_samples_split': 3, 'n_estimators': 200}, {'max_depth': None, 'min_samples_split': 3, 'n_estimators': 600}, {'max_depth': None, 'min_samples_split': 3, 'n_estimators': 1000}, {'max_depth': None, 'min_samples_split': 4, 'n_estimators': 200}, {'max_depth': None, 'min_samples_split': 4, 'n_estimators': 600}, {'max_depth': None, 'min_samples_split': 4, 'n_estimators': 1000}, {'max_depth': None, 'min_samples_split': 5, 'n_estimators': 200}, {'max_depth': None, 'min_samples_split': 5, 'n_estimators': 600}, {'max_depth': None, 'min_samples_split': 5, 'n_estimators': 1000}, {'max_depth': 1, 'min_samples_split': 2, 'n_estimators': 200}, {'max_depth': 1, 'min_samples_split': 2, 'n_estimators': 600}, {'max_depth': 1, 'min_samples_split': 2, 'n_estimators': 1000}, {'max_depth': 1, 'min_samples_split': 3, 'n_estimators': 200}, {'max_depth': 1, 'min_samples_split': 3, 'n_estimators': 600}, {'max_depth': 1, 'min_samples_split': 3, 'n_estimators': 1000}, {'max_depth': 1, 'min_samples_split': 4, 'n_estimators': 200}, {'max_depth': 1, 'min_samples_split': 4, 'n_estimators': 600}, {'max_depth': 1, 'min_samples_split': 4, 'n_estimators': 1000}, {'max_depth': 1, 'min_samples_split': 5, 'n_estimators': 200}, {'max_depth': 1, 'min_samples_split': 5, 'n_estimators': 600}, {'max_depth': 1, 'min_samples_split': 5, 'n_estimators': 1000}, {'max_depth': 2, 'min_samples_split': 2, 'n_estimators': 200}, {'max_depth': 2, 'min_samples_split': 2, 'n_estimators': 600}, {'max_depth': 2, 'min_samples_split': 2, 'n_estimators': 1000}, {'max_depth': 2, 'min_samples_split': 3, 'n_estimators': 200}, {'max_depth': 2, 'min_samples_split': 3, 'n_estimators': 600}, {'max_depth': 2, 'min_samples_split': 3, 'n_estimators': 1000}, {'max_depth': 2, 'min_samples_split': 4, 'n_estimators': 200}, {'max_depth': 2, 'min_samples_split': 4, 'n_estimators': 600}, {'max_depth': 2, 'min_samples_split': 4, 'n_estimators': 1000}, {'max_depth': 2, 'min_samples_split': 5, 'n_estimators': 200}, {'max_depth': 2, 'min_samples_split': 5, 'n_estimators': 600}, {'max_depth': 2, 'min_samples_split': 5, 'n_estimators': 1000}, {'max_depth': 3, 'min_samples_split': 2, 'n_estimators': 200}, {'max_depth': 3, 'min_samples_split': 2, 'n_estimators': 600}, {'max_depth': 3, 'min_samples_split': 2, 'n_estimators': 1000}, {'max_depth': 3, 'min_samples_split': 3, 'n_estimators': 200}, {'max_depth': 3, 'min_samples_split': 3, 'n_estimators': 600}, {'max_depth': 3, 'min_samples_split': 3, 'n_estimators': 1000}, {'max_depth': 3, 'min_samples_split': 4, 'n_estimators': 200}, {'max_depth': 3, 'min_samples_split': 4, 'n_estimators': 600}, {'max_depth': 3, 'min_samples_split': 4, 'n_estimators': 1000}, {'max_depth': 3, 'min_samples_split': 5, 'n_estimators': 200}, {'max_depth': 3, 'min_samples_split': 5, 'n_estimators': 600}, {'max_depth': 3, 'min_samples_split': 5, 'n_estimators': 1000}], 'split0_test_score': array([0.93766743, 0.93779811, 0.93714472, 0.93662202, 0.9372754 ,
+       0.93714472, 0.93446586, 0.93479255, 0.93551127, 0.93211369,
+       0.93198301, 0.93204835, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466, 0.89075466, 0.89075466,
+       0.89075466, 0.89075466, 0.89075466]), 'split1_test_score': array([0.93609514, 0.93589911, 0.93563774, 0.93570308, 0.93609514,
+       0.93655254, 0.93439624, 0.93452692, 0.93485363, 0.93276268,
+       0.93269733, 0.93237062, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752]), 'split2_test_score': array([0.93674856, 0.93766336, 0.93740199, 0.93720596, 0.93746733,
+       0.93720596, 0.93544171, 0.9360298 , 0.93570308, 0.93302405,
+       0.93230528, 0.93269733, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752]), 'mean_test_score': array([0.93683706, 0.93712021, 0.93672816, 0.93651036, 0.93694596,
+       0.93696774, 0.93476793, 0.93511642, 0.935356  , 0.93263346,
+       0.93232853, 0.9323721 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 ]), 'std_test_score': array([6.44931456e-04, 8.65180617e-04, 7.78149781e-04, 6.18599519e-04,
+       6.06695006e-04, 2.94654061e-04, 4.77276562e-04, 6.54887933e-04,
+       3.63749886e-04, 3.82720513e-04, 2.92085515e-04, 2.64950024e-04,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06,
+       3.36508822e-06, 3.36508822e-06, 3.36508822e-06, 3.36508822e-06]), 'rank_test_score': array([ 4,  1,  5,  6,  3,  2,  9,  8,  7, 10, 12, 11, 13, 13, 13, 13, 13,
+       13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13,
+       13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13, 13]), 'split0_train_score': array([0.99186487, 0.99186487, 0.99186487, 0.99147282, 0.99179953,
+       0.99179953, 0.98827104, 0.98859775, 0.98885912, 0.98216153,
+       0.9824229 , 0.98248824, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752, 0.89074752, 0.89074752,
+       0.89074752, 0.89074752, 0.89074752]), 'split1_train_score': array([0.99140776, 0.99140776, 0.99140776, 0.99104838, 0.99127708,
+       0.99134242, 0.98729132, 0.98781404, 0.9880754 , 0.98258682,
+       0.98232546, 0.98222745, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109]), 'split2_train_score': array([0.99196315, 0.99196315, 0.99196315, 0.99170179, 0.99189781,
+       0.99189781, 0.98804273, 0.98892483, 0.98892483, 0.98219478,
+       0.98248881, 0.98242347, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109, 0.89075109, 0.89075109,
+       0.89075109, 0.89075109, 0.89075109]), 'mean_train_score': array([0.99174526, 0.99174526, 0.99174526, 0.99140766, 0.99165814,
+       0.99167992, 0.98786836, 0.98844554, 0.98861978, 0.98231438,
+       0.98241239, 0.98237972, 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 , 0.8907499 ,
+       0.8907499 , 0.8907499 , 0.8907499 ]), 'std_train_score': array([2.41999490e-04, 2.41999490e-04, 2.41999490e-04, 2.70699800e-04,
+       2.72422419e-04, 2.41999139e-04, 4.18542251e-04, 4.66073622e-04,
+       3.85868832e-04, 1.93125672e-04, 6.71002222e-05, 1.10870256e-04,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06,
+       1.68258076e-06, 1.68258076e-06, 1.68258076e-06, 1.68258076e-06])}
+feature importances:  [0.09327627 0.00745628 0.05893043 0.07809876 0.28652033 0.28154075
+ 0.19417718]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+

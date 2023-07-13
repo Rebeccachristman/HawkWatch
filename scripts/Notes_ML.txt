@@ -1,0 +1,105 @@
+  Night      Mean          Std      NumObj      Size      Dist       Angle  Label
+[0.01210451 0.16926687 0.14908099 0.11445685 0.18700892 0.2565061 0.11157576]
+
+scores:  [0.93570521 0.9364676  0.93595934]
+
+scores_std:  [0.00786442 0.00719438 0.00902341]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=300, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+
+
+
+*****************************************************************
+hwi_manual_classify.py exception
+
+processing file:  E:\Training_Test_Photo_Set\Cam276_011817_Deer\IMG_1600.JPG
+DateTime, CameraNumber:   2017:01:25 14:41:37 CAM276
+file, mode, sequence num, sequence length:   IMG_1600.JPG M 1 3
+mean, std:   98.43 33.7
+processing file:  E:\Training_Test_Photo_Set\Cam276_011817_Deer\IMG_1671.JPG
+DateTime, CameraNumber:   2017:01:25 15:10:27 CAM276
+file, mode, sequence num, sequence length:   IMG_1671.JPG M 3 3
+mean, std:   111.51 35.11
+Traceback (most recent call last):
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 1506, in _has_valid_type
+    error()
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 1501, in error
+    axis=self.obj._get_axis_name(axis)))
+KeyError: 'the label [2] is not in the [index]'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "hwi_manual_classify.py", line 286, in <module>
+    main(sys.argv[1:])
+  File "hwi_manual_classify.py", line 204, in main
+    xlabel = df_save_sequence.loc[seq_index, 'File'] + "  Seq: "+str(seq_index+1)+"/"+str(seq_len)
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 1367, in __getitem__
+    return self._getitem_tuple(key)
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 858, in _getitem_tuple
+    return self._getitem_lowerdim(tup)
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 991, in _getitem_lowerdim
+    section = self._getitem_axis(key, axis=i)
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 1626, in _getitem_axis
+    self._has_valid_type(key, axis)
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 1514, in _has_valid_type
+    error()
+  File "C:\Users\smith\Anaconda3\lib\site-packages\pandas\core\indexing.py", line 1501, in error
+    axis=self.obj._get_axis_name(axis)))
+KeyError: 'the label [2] is not in the [index]'
+
+(base) C:\Users\smith\Documents\Becky\HawkWatch\scripts>
+
+
+
+June 25, after adding photo_set_2 and some other directories from E:
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [200, 300, 400]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:   14.9s finished
+scores:  [0.92674665 0.92646436 0.92674665]
+scores_std:  [0.00341534 0.00438917 0.00331008]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=200, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([0.96362146, 1.37780333, 1.82517282]), 'std_fit_time': array([0.02235082, 0.02635405, 0.00919906]), 'mean_score_time': array([0.07082319, 0.10695688, 0.12835534]), 'std_score_time': array([0.00636241, 0.01088405, 0.00239148]), 'param_n_estimators': masked_array(data=[200, 300, 400],
+             mask=[False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 200}, {'n_estimators': 300}, {'n_estimators': 400}], 'split0_test_score': array([0.92548688, 0.92548688, 0.92633362]), 'split1_test_score': array([0.93141406, 0.9322608 , 0.93099069]), 'split2_test_score': array([0.92333757, 0.92164337, 0.92291402]), 'mean_test_score': array([0.92674665, 0.92646436, 0.92674665]), 'std_test_score': array([0.00341534, 0.00438917, 0.00331008]), 'rank_test_score': array([1, 3, 1]), 'split0_train_score': array([0.99957654, 0.99957654, 0.99957654]), 'split1_train_score': array([1., 1., 1.]), 'split2_train_score': array([0.99957663, 0.99957663, 0.99957663]), 'mean_train_score': array([0.99971772, 0.99971772, 0.99971772]), 'std_train_score': array([0.0001996, 0.0001996, 0.0001996])}
+feature importances:  [0.00039595 0.12808654 0.12196562 0.03765069 0.01021561 0.17025595
+ 0.0741804  0.17630642 0.18402721 0.09691561]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+
+*********
+On 11 July after using Dustin's labels for the Utah 2016-2017 data
+RandomforestClassifier
+tuned_parameters:  {'n_estimators': [200, 300, 400]}
+Beginning GridSearchCV
+Fitting 3 folds for each of 3 candidates, totalling 9 fits
+[Parallel(n_jobs=1)]: Done   9 out of   9 | elapsed:   49.6s finished
+scores:  [0.99927547 0.99929273 0.99929273]
+scores_std:  [3.06149320e-08 2.43704698e-05 2.43704698e-05]
+BEST ESTIMATOR:  RandomForestClassifier(bootstrap=True, class_weight=None, criterion='gini',
+            max_depth=None, max_features='auto', max_leaf_nodes=None,
+            min_impurity_decrease=0.0, min_impurity_split=None,
+            min_samples_leaf=1, min_samples_split=2,
+            min_weight_fraction_leaf=0.0, n_estimators=300, n_jobs=1,
+            oob_score=False, random_state=0, verbose=0, warm_start=False)
+{'mean_fit_time': array([2.89239271, 4.10697325, 5.52933256]), 'std_fit_time': array([0.1474898 , 0.11633743, 0.20282131]), 'mean_score_time': array([0.30660828, 0.45496368, 0.59883205]), 'std_score_time': array([0.00447043, 0.01761551, 0.00453469]), 'param_n_estimators': masked_array(data=[200, 300, 400],
+             mask=[False, False, False],
+       fill_value='?',
+            dtype=object), 'params': [{'n_estimators': 200}, {'n_estimators': 300}, {'n_estimators': 400}], 'split0_test_score': array([0.99927551, 0.99927551, 0.99927551]), 'split1_test_score': array([0.99927547, 0.99927547, 0.99927547]), 'split2_test_score': array([0.99927544, 0.99932719, 0.99932719]), 'mean_test_score': array([0.99927547, 0.99929273, 0.99929273]), 'std_test_score': array([3.06149320e-08, 2.43704698e-05, 2.43704698e-05]), 'rank_test_score': array([3, 1, 1]), 'split0_train_score': array([0.99987062, 0.99987062, 0.99987062]), 'split1_train_score': array([0.99992237, 0.99992237, 0.99992237]), 'split2_train_score': array([0.9998965, 0.9998965, 0.9998965]), 'mean_train_score': array([0.9998965, 0.9998965, 0.9998965]), 'std_train_score': array([2.11289501e-05, 2.11289501e-05, 2.11289501e-05])}
+feature importances:  [0.01190975 0.00087275 0.01936862 0.06166394 0.43517591 0.31372762
+ 0.15728141]
+Pickle the trained model to file:  ..\data\hwi_classifier_model.pkl
+
+

@@ -1,0 +1,21 @@
+n_epoch=1
+Training Step: 591  | total loss: 0.35255 | time: 492.916s
+| Adam | epoch: 001 | loss: 0.35255 - acc: 0.8471 -- iter: 56736/56780
+Training Step: 592  | total loss: 0.35416 | time: 538.932s
+| Adam | epoch: 001 | loss: 0.35416 - acc: 0.8468 | val_loss: 0.40363 - val_acc: 0.8247 -- iter: 56780/56780
+--
+Tried 3 bird images: budster, Bullocks Oriole, and cam276_010917_Deer.
+None of the 3 were identified as a bird.
+
+n_epoch=50
+Identified birds in 3 out of 4 of the Hawk Watch sample images as well as identifying the bullocks oriole and a couple of pictures of Budster.
+
+n_epoch=100
+Training Step: 59199  | total loss: 0.15503 | time: 406.543s
+| Adam | epoch: 100 | loss: 0.15503 - acc: 0.9325 -- iter: 56736/56780
+Training Step: 59200  | total loss: 0.15669 | time: 430.670s
+| Adam | epoch: 100 | loss: 0.15669 - acc: 0.9320 | val_loss: 0.21810 - val_acc: 0.9446 -- iter: 56780/56780
+--
+
+
+

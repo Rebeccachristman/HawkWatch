@@ -1,0 +1,29 @@
+Training Data File, Manual Label File,Merge File,Add to Merge,Notes
+E:\Trail_Cameras\Utah\2016-2017\Cam272_011017_Rabbit\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_011017_Rabbit.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam272_102716_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_102716_Deer.csv,not_used,TRUE,7 eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam272_113016_Raccoon\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_113016_Raccoon.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam272_122016_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam272_122016_Deer.csv,not_used,FALSE,No matching entry in spreadsheet.
+E:\Trail_Cameras\Utah\2016-2017\Cam273_010317_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_010317_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam273_101116_Jackrabbit\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_101116_Jackrabbit.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam273_111116_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_111116_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam273_120816_Jackrabbit\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam273_120816_Jackrabbit.csv,not_used,TRUE,3 eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam276_010917_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_010917_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam276_011817_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_011817_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam276_101116_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_101116_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam276_121216_Raccoon\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam276_121216_Raccoon.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam277_011817_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_011817_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam277_101116_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_101116_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam277_120716_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam277_120716_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam279_010317_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_010317_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_011817_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam279_011817_Deer_cont\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_011817_Deer_cont.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam279_121216_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam279_121216_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam292_010917_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam292_010917_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam292_121216_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam292_121216_Deer.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam312_121216_Skunk\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam312_121216_Skunk.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam326_010317_Rabbit\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam326_010317_Rabbit.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam326_121216_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam326_121216_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam74_111116_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam74_111116_Deer.csv,not_used,TRUE,
+E:\Trail_Cameras\Utah\2016-2017\Cam74_120116_Jackrabbit\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam74_120116_Jackrabbit.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam74_122016_Jackrabbit\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam74_122016_Jackrabbit.csv,not_used,FALSE,No eagles
+E:\Trail_Cameras\Utah\2016-2017\Cam75_120816_Deer\hwi_sequence_out.csv,C:\Users\smith\Documents\Becky\HawkWatch\data\label_out_Cam75_120816_Deer.csv,not_used,FALSE,No eagles

@@ -1,0 +1,16 @@
+block should really be the equivalent of
+'block' is not recognized as an internal or external command,
+operable program or batch file.
+
+
+From pickle.load(open())
+---------------------------------------------------------------------------
+UnicodeDecodeError                        Traceback (most recent call last)
+<ipython-input-4-f9f4b7975a3c> in <module>()
+      1 dataset_path="C:\\Users\\smith\\Documents\\Becky\\Hawk Watch\\BirdRecognition\\"
+      2 # Load the data set
+----> 3 X, Y, X_test, Y_test = pickle.load(open(dataset_path+"full_dataset.pkl", "rb"))
+
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xa8 in position 6: ordinal not in range(128)
+
+
