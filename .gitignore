@@ -12,4 +12,5 @@ save**
 *.save
 *.pbix
 test**
-*.jpg
+cam**.jpg
+Cam**.jpg
