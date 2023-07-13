@@ -2,3 +2,5 @@ __MACOSX**
 *.pem
 .DS_Store
 *.key
+.ipynb_checkpoints
+__pycache__
