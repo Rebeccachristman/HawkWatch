@@ -25,4 +25,6 @@ Data_set_1**
 *.txt
 *.csv
 **ipynb_checkpoints**
-papers/**
+papers/*
+images/*
+data/*
