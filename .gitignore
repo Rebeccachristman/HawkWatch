@@ -12,7 +12,6 @@ save**
 *.save
 *.pbix
 test**
-*.jpg
 cam**.jpg
 Cam**.jpg
 *.pkl
@@ -26,6 +25,3 @@ Data_set_1**
 *.csv
 **ipynb_checkpoints**
 papers/*
-images/*
-data/*
-*.png
