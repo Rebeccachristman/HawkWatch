@@ -19,5 +19,6 @@ imtools.*
 image_play.*
 Data_set_1**
 *.ipynb
-**log.txt
+**-log.txt
 *.xlsx
+*.txt
